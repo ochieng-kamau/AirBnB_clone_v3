@@ -5,6 +5,7 @@ from flask import *
 from models import storage
 from models.amenity import Amenity
 
+
 @app_views.route('/amenities', methods=['GET'], strict_slashes=False)
 def get_amenities():
     """get amenity information for all amenities"""
@@ -62,4 +63,3 @@ def put_amenity(amenity_id):
             setattr(amenity, attr, val)
     amenity.save()
     return jsonify(amenity.to_dict())
-
